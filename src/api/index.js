@@ -11,10 +11,10 @@ const heroes = [
 
 const schema = buildSchema(`
   type Query {
-    heroes: [Heroe]
+    heroes: [Hero]
   }
 
-  type Heroe {
+  type Hero {
     id: ID
     name: String
   }
