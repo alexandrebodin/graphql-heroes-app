@@ -1,0 +1,21 @@
+{
+  "name": "graphql-heros",
+  "version": "1.0.0",
+  "description": "A graphql heros app for kilix testing",
+  "main": "index.js",
+  "author": "Alexandre BODIN <bodin.alex@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node src/server.js",
+    "build": "next build src/client",
+    "start": "NODE_ENV=production node src/server.js"
+  },
+  "dependencies": {
+    "express": "4.15.3",
+    "express-graphql": "0.6.6",
+    "graphql": "0.10.4",
+    "next": "2.4.7",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  }
+}
