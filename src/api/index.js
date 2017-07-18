@@ -1,34 +1,14 @@
 const router = require('express').Router();
 const expressGraphQL = require('express-graphql');
 const { buildSchema } = require('graphql');
-
-const heroes = [
-  {
-    id: 1,
-    name: 'Captain America',
-  },
-];
-
-const schema = buildSchema(`
-  type Query {
-    heroes: [Hero]
-  }
-
-  type Hero {
-    id: ID
-    name: String
-  }
-`);
-
-const root = {
-  heroes: () => heroes,
-};
+const resolvers = require('./resolvers');
+const schema = require('./schema');
 
 router.use(
   '/',
   expressGraphQL({
-    schema,
-    rootValue: root,
+    schema: buildSchema(schema),
+    rootValue: resolvers,
     graphiql: true,
   })
 );
