@@ -18,7 +18,7 @@ const withApollo = WrappedComponent => {
     render() {
       return (
         <ApolloProvider client={client}>
-          <WrappedComponent />
+          <WrappedComponent {...this.props} />
         </ApolloProvider>
       )
     }

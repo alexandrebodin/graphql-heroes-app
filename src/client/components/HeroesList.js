@@ -69,7 +69,7 @@ const HeroCard = ({ hero }) => {
   )
 }
 
-const HeroesList = ({ data }) => {
+const HeroesList = ({ data, onHeroClick }) => {
   if (data.loading)
     return (
       <p style={{ color: 'white', textAlign: 'center' }}> Loading heroes... </p>
@@ -77,7 +77,16 @@ const HeroesList = ({ data }) => {
 
   return (
     <div style={listStyle}>
-      {data.heroes.map(hero => <HeroCard key={hero.id} hero={hero} />)}
+      {data.heroes.map(hero =>
+        <a
+          style={{ textDecoration: 'none' }}
+          key={hero.id}
+          href={`/hero?id=${hero.id}`}
+          onClick={e => onHeroClick(e, hero.id)}
+        >
+          <HeroCard hero={hero} />
+        </a>
+      )}
     </div>
   )
 }
