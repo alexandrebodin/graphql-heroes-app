@@ -151,7 +151,7 @@ const heroes = [
       'Dr. Stephen Strange was once a gifted but egotistical surgeon who sought out the Ancient One to heal his hands after they were wounded in a car accident. Instead, the Ancient One trained him to become Master of the Mystic Arts and the Sorcerer Supreme of Earth.',
   },
   {
-    alias: 'Hawkeyes',
+    alias: 'Hawkeye',
     firstname: 'Clint',
     lastname: 'Barton',
     picture: '/static/heroes/hawkeyes.jpg',
