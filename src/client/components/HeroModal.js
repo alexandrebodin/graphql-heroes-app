@@ -25,7 +25,7 @@ const Content = glamorous.div({
 
 const ImageWrapper = glamorous.div({
   background: '#111',
-  flex: '0 0 600px',
+  flex: '0 0 580px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -48,7 +48,7 @@ const Image = glamorous.div(
 
 const SideBar = glamorous.div({
   background: '#fff',
-  flex: '0 0 200px',
+  flex: '0 0 160px',
   textAlign: 'left',
   padding: 20,
   fontSize: 12,
