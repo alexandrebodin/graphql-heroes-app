@@ -17,7 +17,7 @@ const heroes = [
   },
   {
     alias: 'Superman',
-    fistname: 'Clark Joseph',
+    firstname: 'Clark Joseph',
     lastname: 'Kent',
     picture: '/static/heroes/superman.jpg',
     description:
@@ -41,7 +41,7 @@ const heroes = [
   },
   {
     alias: 'Cyborg',
-    firsname: 'Victor',
+    firstname: 'Victor',
     lastname: 'Stone',
     picture: '/static/heroes/cyborg.jpg',
     description:
@@ -49,7 +49,7 @@ const heroes = [
   },
   {
     alias: 'Flash',
-    firsname: 'Barry',
+    firstname: 'Barry',
     lastname: 'Allen',
     picture: '/static/heroes/flash.jpg',
     description:
@@ -89,7 +89,7 @@ const heroes = [
   },
   {
     alias: 'Black Panther',
-    firsname: "T'Challa",
+    firstname: "T'Challa",
     picture: '/static/heroes/blackpanther.jpg',
     description:
       "T'Challa is the Black Panther, king of Wakanda, one of the most technologically advanced nations on Earth. He is among the top intellects and martial artists of the world, a veteran Avenger, and a member of the Illuminati. Using his powers and abilities, he has pledged his fortune, powers, and life to the service of all mankind.",
@@ -128,8 +128,8 @@ const heroes = [
   },
   {
     alias: 'Deadpool',
-    firsname: 'Wade',
-    lastanme: 'Wilson',
+    firstname: 'Wade',
+    lastname: 'Wilson',
     picture: '/static/heroes/deadpool.jpg',
     description:
       'Wade Wilson is a former test subject of the Weapon X program, possessing a regenerative healing factor and an unstable compiling of other "Weapon X" experiments. Deadpool\'s powers and personality traits combine to make a wild, mentally unstable, and unpredictable mercenary. Deadpool has been a member of X-Force and the Thunderbolts, and a self-professed member of the X-Men and Avengers. The "Merc with a Mouth" is infamous for breaking the fourth wall.',
@@ -152,7 +152,7 @@ const heroes = [
   },
   {
     alias: 'Hawkeyes',
-    firsname: 'Clint',
+    firstname: 'Clint',
     lastname: 'Barton',
     picture: '/static/heroes/hawkeyes.jpg',
     description:
@@ -168,7 +168,7 @@ const heroes = [
   },
   {
     alias: 'Iron Man',
-    firsname: 'Anthony Edward "Tony"',
+    firstname: 'Anthony Edward "Tony"',
     lastname: 'Stark',
     picture: '/static/heroes/ironman.jpg',
     description:
@@ -176,7 +176,7 @@ const heroes = [
   },
   {
     alias: 'Thor',
-    firsname: 'Thor',
+    firstname: 'Thor',
     lastname: 'Odinson',
     picture: '/static/heroes/thor.jpg',
     description:
@@ -221,8 +221,8 @@ const heroes = [
     description:
       'The tree-like creature known as Groot was captured by the Kree and put on a team with Star-Lord, Bug, Mantis, and Rocket Raccoon. A tree of few words, Groot formed a bond with the creature known as Rocket Raccoon. Forming the Guardians of the Galaxy, Groot and his best friend Rocket travel through space getting into trouble wherever they go.',
   },
-];
+]
 
 exports.seed = function(knex, Promise) {
-  return knex('heroes').del().then(() => knex('heroes').insert(heroes));
-};
+  return knex('heroes').del().then(() => knex('heroes').insert(heroes))
+}

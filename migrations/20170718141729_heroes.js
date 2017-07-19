@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('firstname')
     table.string('lastname')
     table.string('picture')
-    table.string('description')
+    table.text('description')
   })
 }
 
