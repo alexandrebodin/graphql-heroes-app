@@ -1,12 +1,12 @@
 module.exports = `
   type Query {
-    heroes: [Hero]
+    heroes(search: String): [Hero]
     hero(id: ID): Hero
   }
-
+  
   type Hero {
-    id: ID
-    alias: String
+    id: ID!
+    alias: String!
     picture: String
     firstname: String
     lastname: String

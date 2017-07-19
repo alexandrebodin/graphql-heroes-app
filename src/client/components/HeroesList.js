@@ -7,7 +7,6 @@ const listStyle = {
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  padding: 50,
   minWidth: 300,
 }
 
@@ -92,12 +91,14 @@ const HeroesList = ({ data, onHeroClick }) => {
 }
 
 const heroesQuery = gql`
-  query {
-    heroes {
+  query FilterHeroes($search: String) {
+    heroes(search: $search) {
       id
       alias
       picture
     }
   }
 `
-export default graphql(heroesQuery)(HeroesList)
+export default graphql(heroesQuery, {
+  options: ({ search }) => ({ search }),
+})(HeroesList)
