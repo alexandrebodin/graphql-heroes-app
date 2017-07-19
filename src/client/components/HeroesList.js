@@ -1,27 +1,14 @@
 import React, { Component } from 'react'
 import { gql, graphql } from 'react-apollo'
+import glamorous from 'glamorous'
 
 const listStyle = {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  justifyContent: 'flex-start',
-  padding: 50,
-  maxWidth: 1200,
-  margin: 'auto',
-}
-
-const cardStyle = {
-  width: 250,
-  height: 250,
-  margin: 10,
-  background: '#eee',
-  display: 'flex',
   justifyContent: 'center',
-  alignItems: 'flex-end',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center top',
-  position: 'relative',
+  padding: 50,
+  minWidth: 300,
 }
 
 const nameStyle = {
@@ -31,28 +18,66 @@ const nameStyle = {
   backgroundColor: 'rgba(0, 0, 0, 0.3)',
   padding: 10,
   flex: 1,
+  zIndex: 1,
   textAlign: 'center',
 }
 
+const Card = glamorous.div({
+  width: 250,
+  height: 250,
+  margin: 10,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'flex-end',
+  background: '#eee',
+  position: 'relative',
+  transition: 'all 0.2s',
+  overflow: 'hidden',
+  ':hover': {
+    cursor: 'pointer',
+  },
+})
+
+const PictureBackground = glamorous.div(
+  {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 0,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center top',
+    transition: 'all 0.2s',
+    ':hover': {
+      transform: 'scale(1.1)',
+    },
+  },
+  ({ picture }) => ({
+    backgroundImage: `url(${picture})`,
+  })
+)
+
+const HeroCard = ({ hero }) => {
+  return (
+    <Card>
+      <PictureBackground picture={hero.picture} />
+      <div style={nameStyle}>
+        {hero.alias}
+      </div>
+    </Card>
+  )
+}
+
 const HeroesList = ({ data }) => {
-  if (data.loading) return <p> Loading heroes... </p>
-  console.log(data)
+  if (data.loading)
+    return (
+      <p style={{ color: 'white', textAlign: 'center' }}> Loading heroes... </p>
+    )
+
   return (
     <div style={listStyle}>
-      {data.heroes.map(hero => {
-        const style = {
-          ...cardStyle,
-          backgroundImage: `url(${hero.picture})`,
-        }
-
-        return (
-          <div key={hero.id} style={style}>
-            <div style={nameStyle}>
-              {hero.alias}
-            </div>
-          </div>
-        )
-      })}
+      {data.heroes.map(hero => <HeroCard key={hero.id} hero={hero} />)}
     </div>
   )
 }
