@@ -23,16 +23,28 @@ const Content = glamorous.div({
   display: 'flex',
 })
 
-const Image = glamorous.div({
+const ImageWrapper = glamorous.div({
   background: '#111',
   flex: '0 0 600px',
-  color: '#fff',
-  textAlign: 'center',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
+  padding: 10,
 })
+
+const Image = glamorous.div(
+  {
+    width: '100%',
+    height: '100%',
+  },
+  ({ picture }) => ({
+    backgroundImage: `url(${picture})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
+  })
+)
 
 const SideBar = glamorous.div({
   background: '#fff',
@@ -43,8 +55,15 @@ const SideBar = glamorous.div({
 })
 
 const Title = glamorous.div({
-  fontSize: 20,
-  marginBottom: 50,
+  fontSize: 16,
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  marginBottom: 10,
+})
+
+const SubTitle = glamorous.div({
+  fontSize: 12,
+  marginBottom: 10,
 })
 
 class HeroModal extends Component {
@@ -68,18 +87,20 @@ class HeroModal extends Component {
         onClick={e => this.dismiss(e)}
       >
         <Content innerRef={el => (this._photoWrap = el)}>
-          <Image>
-            <img src={hero.picture} />
-          </Image>
-
+          <ImageWrapper>
+            <Image picture={hero.picture} />
+          </ImageWrapper>
           <SideBar>
             <Title>
-              {hero.alias} <br />
-              {hero.firstname} {hero.lastname}
+              {hero.alias}
             </Title>
-            <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-              <li>- Great photo!</li>
-            </ul>
+            <SubTitle>
+              Real identity: <br />
+              {hero.firstname} {hero.lastname}
+            </SubTitle>
+            <p>
+              {hero.description}
+            </p>
           </SideBar>
         </Content>
       </ModalContainer>
@@ -94,6 +115,8 @@ const heroQuery = gql`
       alias
       picture
       description
+      firstname
+      lastname
     }
   }
 `

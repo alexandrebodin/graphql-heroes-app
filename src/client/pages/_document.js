@@ -12,7 +12,17 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <style>{`body { margin: 0; background-color: #212121 }`}</style>
+          <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700"
+            rel="stylesheet"
+          />
+          <style>{`
+            body {
+              margin: 0;
+              background-color: #212121;
+              font-family: Ubuntu, sans-serif; 
+            }
+          `}</style>
         </Head>
         <body>
           {this.props.customValue}

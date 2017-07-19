@@ -1,5 +1,11 @@
 const heroes = [
-  { alias: 'Aquaman', picture: '/static/heroes/aquaman.jpg' },
+  {
+    alias: 'Aquaman',
+    picture: '/static/heroes/aquaman.jpg',
+    description: 'aquaman description',
+    firstname: 'truc',
+    lastname: 'much',
+  },
   { alias: 'Batman', picture: '/static/heroes/batman.jpg' },
   { alias: 'Superman', picture: '/static/heroes/superman.jpg' },
   { alias: 'Spider-Man', picture: '/static/heroes/spiderman.jpg' },
