@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700"
+            href="https://fonts.googleapis.com/css?family=Ubuntu:100,200,300,400,500,700"
             rel="stylesheet"
           />
           <style>{`

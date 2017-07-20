@@ -1,8 +1,9 @@
-const db = require('../db')
+const models = require('../models')
 
 const resolvers = {
-  heroes: ({ search }) => db.heroes.findAll({ search }),
-  hero: ({ id }) => db.heroes.find(id),
+  heroes: ({ search }) => models.heroes.findAll({ search }),
+  hero: ({ id }) => models.heroes.findOne({ id }),
+  movie: ({ id }) => models.movies.findOne({ id }),
 }
 
 module.exports = resolvers

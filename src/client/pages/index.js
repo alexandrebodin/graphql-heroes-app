@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Router from 'next/router'
 import glamorous from 'glamorous'
 
-import HeroesList from '../components/HeroesList'
+import HeroesListContainer from '../containers/HeroesListContainer'
 import HeroModal from '../components/HeroModal'
 import withApollo from '../lib/withApollo'
 
@@ -91,7 +91,7 @@ class Index extends Component {
               id={url.query.heroId}
               onDismiss={() => this.dismissModal()}
             />}
-          <HeroesList
+          <HeroesListContainer
             onHeroClick={(e, id) => this.showHero(e, id)}
             search={this.state.searchQuery}
           />

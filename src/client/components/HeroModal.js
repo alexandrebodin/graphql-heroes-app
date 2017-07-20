@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { Component } from 'react'
 import { gql, graphql } from 'react-apollo'
 import glamorous from 'glamorous'
@@ -17,7 +18,7 @@ const ModalContainer = glamorous.div({
 })
 
 const Content = glamorous.div({
-  width: 800,
+  width: 900,
   height: 500,
   overflow: 'hidden',
   display: 'flex',
@@ -48,7 +49,7 @@ const Image = glamorous.div(
 
 const SideBar = glamorous.div({
   background: '#fff',
-  flex: '0 0 160px',
+  flex: '0 0 260px',
   textAlign: 'left',
   padding: 20,
   fontSize: 12,
@@ -66,6 +67,12 @@ const SubTitle = glamorous.div({
   marginBottom: 10,
 })
 
+const MovieLi = glamorous.li({
+  ':hover': {
+    textDecoration: 'underline',
+  },
+})
+
 class HeroModal extends Component {
   dismiss(e) {
     if (this._shim === e.target || this._photoWrap === e.target) {
@@ -78,7 +85,7 @@ class HeroModal extends Component {
   render() {
     const { data } = this.props
 
-    if (data.loading) return null
+    if (data.loading || data.error) return null
 
     const hero = data.hero
     return (
@@ -95,12 +102,38 @@ class HeroModal extends Component {
               {hero.alias}
             </Title>
             <SubTitle>
-              Real identity: <br />
-              {hero.firstname} {hero.lastname}
+              Real identity:{' '}
+              <strong>
+                {hero.firstname} {hero.lastname}
+              </strong>
             </SubTitle>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               {hero.description}
             </p>
+            <strong>Movies:</strong>
+            <ul
+              style={{
+                margin: 0,
+                padding: 5,
+                listStyle: 'none',
+                lineHeight: 1.5,
+              }}
+            >
+              {hero.movies.map(m => {
+                return (
+                  <MovieLi key={m.id} style={{ cursor: 'pointer' }}>
+                    <Link href={`/movie?id=${m.id}`}>
+                      <span>
+                        <strong>{m.name}</strong>{' '}
+                        <small>
+                          by {m.director} ({m.production_year})
+                        </small>
+                      </span>
+                    </Link>
+                  </MovieLi>
+                )
+              })}
+            </ul>
           </SideBar>
         </Content>
       </ModalContainer>
@@ -109,7 +142,7 @@ class HeroModal extends Component {
 }
 
 const heroQuery = gql`
-  query hero($id: ID) {
+  query hero($id: ID!) {
     hero(id: $id) {
       id
       alias
@@ -117,6 +150,12 @@ const heroQuery = gql`
       description
       firstname
       lastname
+      movies {
+        id
+        name
+        director
+        production_year
+      }
     }
   }
 `

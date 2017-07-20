@@ -11,11 +11,20 @@ const findAll = ({ search } = {}) => {
   return query
 }
 
-const find = id => {
-  return qb.select().from('heroes').where('id', id).first()
+const findOne = ({ id }) => {
+  return qb.select().from('heroes').where('id', id)
+}
+
+const findHeroeisByMovie = ({ movieId }) => {
+  return qb
+    .select('h.*')
+    .from('heroes AS h')
+    .leftJoin('link_heroes_movies AS l', 'l.hero_id', 'h.id')
+    .where('l.movie_id', movieId)
 }
 
 module.exports = {
   findAll,
-  find,
+  findOne,
+  findHeroeisByMovie,
 }

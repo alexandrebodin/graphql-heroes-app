@@ -1,3 +1,13 @@
-const Hero = () => <div> Hero profile </div>
+import withApollo from '../lib/withApollo'
+import HeroContainer from '../containers/HeroContainer'
+import Layout from '../components/Layout'
 
-export default Hero
+const HeroPage = ({ url }) => {
+  return (
+    <Layout>
+      <HeroContainer id={url.query.id} />
+    </Layout>
+  )
+}
+
+export default withApollo(HeroPage)
