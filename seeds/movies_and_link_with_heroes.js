@@ -246,6 +246,26 @@ const movies = [
     production_year: '2019',
     director: 'Anna Boden and Ryan Fleck',
   },
+  {
+    name: 'The Fantastic Four',
+    production_year: '1994',
+    director: 'Roger Corman',
+  },
+  {
+    name: 'Fantastic Four',
+    production_year: '2005',
+    director: 'Tim Story',
+  },
+  {
+    name: 'Fantastic Four: Rise of the Silver Surfer',
+    production_year: '2007',
+    director: 'Tim Story',
+  },
+  {
+    name: 'Fantastic Four',
+    production_year: '2015',
+    director: 'Josh Trank',
+  },
 ]
 
 const link = [
@@ -286,6 +306,7 @@ const link = [
 
   // The Trial of the Incredible Hulk
   { movie_id: 12, hero_id: 21 },
+  { movie_id: 12, hero_id: 30 },
 
   // Batman
   { movie_id: 13, hero_id: 2 },
@@ -328,6 +349,7 @@ const link = [
   { movie_id: 24, hero_id: 4 },
 
   // Daredevil
+  { movie_id: 25, hero_id: 30 },
   { movie_id: 25, hero_id: 18 },
 
   // X2: X-Men United
@@ -360,6 +382,12 @@ const link = [
   { movie_id: 34, hero_id: 26 },
   { movie_id: 34, hero_id: 25 },
   { movie_id: 34, hero_id: 24 },
+  { movie_id: 34, hero_id: 29 },
+  { movie_id: 34, hero_id: 33 },
+  { movie_id: 34, hero_id: 34 },
+  { movie_id: 34, hero_id: 41 },
+  { movie_id: 34, hero_id: 35 },
+  { movie_id: 34, hero_id: 42 },
 
   // Superman returns
   { movie_id: 35, hero_id: 3 },
@@ -421,6 +449,8 @@ const link = [
 
   // The Wolverine
   { movie_id: 52, hero_id: 26 },
+  { movie_id: 52, hero_id: 34 },
+  { movie_id: 52, hero_id: 24 },
 
   // Thor: The Dark World
   { movie_id: 53, hero_id: 23 },
@@ -436,9 +466,18 @@ const link = [
   { movie_id: 56, hero_id: 24 },
   { movie_id: 56, hero_id: 25 },
   { movie_id: 56, hero_id: 26 },
+  { movie_id: 56, hero_id: 34 },
+  { movie_id: 56, hero_id: 35 },
+  { movie_id: 56, hero_id: 33 },
+  { movie_id: 56, hero_id: 41 },
+  { movie_id: 56, hero_id: 42 },
+  { movie_id: 56, hero_id: 36 },
 
   // Guardians of the Galaxy
   { movie_id: 57, hero_id: 28 },
+  { movie_id: 57, hero_id: 37 },
+  { movie_id: 57, hero_id: 38 },
+  { movie_id: 57, hero_id: 39 },
 
   // Avengers: Age of Ultron
   { movie_id: 58, hero_id: 22 },
@@ -447,6 +486,8 @@ const link = [
   { movie_id: 58, hero_id: 15 },
   { movie_id: 58, hero_id: 13 },
   { movie_id: 58, hero_id: 20 },
+  { movie_id: 58, hero_id: 36 },
+  { movie_id: 58, hero_id: 40 },
 
   // Ant-Man
   { movie_id: 59, hero_id: 11 },
@@ -468,10 +509,16 @@ const link = [
   { movie_id: 62, hero_id: 12 },
   { movie_id: 62, hero_id: 11 },
   { movie_id: 62, hero_id: 4 },
+  { movie_id: 62, hero_id: 40 },
 
   // X-Men: Apocalypse
   { movie_id: 63, hero_id: 24 },
   { movie_id: 63, hero_id: 25 },
+  { movie_id: 63, hero_id: 29 },
+  { movie_id: 63, hero_id: 34 },
+  { movie_id: 63, hero_id: 35 },
+  { movie_id: 63, hero_id: 36 },
+  { movie_id: 63, hero_id: 33 },
 
   // Doctor Strange
   { movie_id: 64, hero_id: 19 },
@@ -482,6 +529,9 @@ const link = [
 
   // Guardians of the Galaxy Vol. 2
   { movie_id: 66, hero_id: 28 },
+  { movie_id: 66, hero_id: 37 },
+  { movie_id: 66, hero_id: 38 },
+  { movie_id: 66, hero_id: 39 },
 
   // Wonder Woman
   { movie_id: 67, hero_id: 10 },
@@ -500,6 +550,7 @@ const link = [
   { movie_id: 70, hero_id: 10 },
   { movie_id: 70, hero_id: 1 },
   { movie_id: 70, hero_id: 7 },
+  { movie_id: 70, hero_id: 6 },
 
   // Black Panther
   { movie_id: 71, hero_id: 12 },
@@ -514,6 +565,11 @@ const link = [
   { movie_id: 72, hero_id: 4 },
   { movie_id: 72, hero_id: 12 },
   { movie_id: 72, hero_id: 11 },
+  { movie_id: 72, hero_id: 37 },
+  { movie_id: 72, hero_id: 40 },
+  { movie_id: 72, hero_id: 28 },
+  { movie_id: 72, hero_id: 38 },
+  { movie_id: 72, hero_id: 39 },
 
   // Deadpool 2
   { movie_id: 73, hero_id: 17 },
@@ -524,12 +580,40 @@ const link = [
   // X-Men: Dark Phoenix
   { movie_id: 75, hero_id: 24 },
   { movie_id: 75, hero_id: 25 },
+  { movie_id: 75, hero_id: 35 },
+  { movie_id: 75, hero_id: 33 },
+  { movie_id: 75, hero_id: 36 },
+  { movie_id: 75, hero_id: 34 },
 
   // Aquaman
   { movie_id: 76, hero_id: 1 },
 
   // Captain Marvel
   { movie_id: 77, hero_id: 16 },
+
+  // The Fantastic Four
+  { movie_id: 78, hero_id: 43 },
+  { movie_id: 78, hero_id: 44 },
+  { movie_id: 78, hero_id: 45 },
+  { movie_id: 78, hero_id: 46 },
+
+  // Fantastic Four
+  { movie_id: 79, hero_id: 43 },
+  { movie_id: 79, hero_id: 44 },
+  { movie_id: 79, hero_id: 45 },
+  { movie_id: 79, hero_id: 46 },
+
+  // Fantastic Four: Rise of the Silver Surfer
+  { movie_id: 80, hero_id: 43 },
+  { movie_id: 80, hero_id: 44 },
+  { movie_id: 80, hero_id: 45 },
+  { movie_id: 80, hero_id: 46 },
+
+  // Fantastic Four
+  { movie_id: 81, hero_id: 43 },
+  { movie_id: 81, hero_id: 44 },
+  { movie_id: 81, hero_id: 45 },
+  { movie_id: 81, hero_id: 46 },
 ]
 
 exports.seed = function(knex, Promise) {
