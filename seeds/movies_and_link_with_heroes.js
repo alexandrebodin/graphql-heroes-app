@@ -516,7 +516,7 @@ const link = [
   { movie_id: 72, hero_id: 11 },
 
   // Deadpool 2
-  { movie_id: 73, hero_id: 2 },
+  { movie_id: 73, hero_id: 17 },
 
   // Ant-Man and the Wasp
   { movie_id: 74, hero_id: 11 },
@@ -533,8 +533,8 @@ const link = [
 ]
 
 exports.seed = function(knex, Promise) {
-  return knex('movies')
-    .del()
+  return knex
+    .raw('TRUNCATE movies, link_heroes_movies RESTART IDENTITY CASCADE')
     .then(() =>
       knex('movies')
         .insert(movies)

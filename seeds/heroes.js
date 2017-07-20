@@ -224,5 +224,7 @@ const heroes = [
 ]
 
 exports.seed = function(knex, Promise) {
-  return knex('heroes').del().then(() => knex('heroes').insert(heroes))
+  return knex
+    .raw('TRUNCATE heroes RESTART IDENTITY CASCADE')
+    .then(() => knex('heroes').insert(heroes))
 }
