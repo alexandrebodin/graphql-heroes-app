@@ -499,6 +499,7 @@ const link = [
   { movie_id: 70, hero_id: 3 },
   { movie_id: 70, hero_id: 10 },
   { movie_id: 70, hero_id: 1 },
+  { movie_id: 70, hero_id: 6 },
   { movie_id: 70, hero_id: 7 },
 
   // Black Panther
