@@ -2,7 +2,7 @@
   "name": "graphql-heros",
   "version": "1.0.0",
   "description": "A graphql heros app for kilix testing",
-  "main": "index.js",
+  "main": "src/server.js",
   "author": "Alexandre BODIN <bodin.alex@gmail.com>",
   "license": "MIT",
   "scripts": {

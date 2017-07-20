@@ -6,7 +6,7 @@ import {
 } from 'react-apollo'
 
 const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:3000/api',
+  uri: 'http://localhost:3001/api',
 })
 
 const client = new ApolloClient({
