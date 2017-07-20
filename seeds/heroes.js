@@ -221,6 +221,146 @@ const heroes = [
     description:
       'The tree-like creature known as Groot was captured by the Kree and put on a team with Star-Lord, Bug, Mantis, and Rocket Raccoon. A tree of few words, Groot formed a bond with the creature known as Rocket Raccoon. Forming the Guardians of the Galaxy, Groot and his best friend Rocket travel through space getting into trouble wherever they go.',
   },
+  {
+    alias: 'Psylocke',
+    firstname: 'Elizabeth "Betsy"',
+    lastname: 'Braddock',
+    picture: '/static/heroes/psylocke.jpg',
+    description:
+      'British beauty Elizabeth "Betsy" Braddock is a mutant with vast telepathic and telekinetic powers that she can focus into deadly weapons. She is a stealthy martial artist, a former fashion model and longtime X-Man.',
+  },
+  {
+    alias: 'Daredevil',
+    firstname: 'Matthew Michael',
+    lastname: 'Murdock',
+    picture: '/static/heroes/daredevil.jpg',
+    description:
+      'Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock, in Hell\'s Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.',
+  },
+  {
+    alias: 'Jessica Jones',
+    firstname: 'Jessica Campbell',
+    lastname: 'Jones',
+    picture: '/static/heroes/jessicajones.jpg',
+    description:
+      'Former private investigator and retired superhero, Jessica is married to Luke Cage and is the mother of Danielle, their infant daughter.',
+  },
+  {
+    alias: 'Luke Cage',
+    firstname: 'Carl',
+    lastname: 'Lucas',
+    picture: '/static/heroes/lukecage.jpg',
+    description:
+      'Luke Cage, wrongly convicted and unjustly imprisoned, was altered in a failed prison experiment that granted him unbreakable skin and superhuman strength. With his street smarts, and unending determination to do right, he fights for the common man! He eventually married Jessica Jones and had a daughter with her. Luke was also a member of The Avengers and the Leader of Thunderbolts for a time.',
+  },
+  {
+    alias: 'Storm',
+    firstname: 'Ororo',
+    lastname: 'Munroe',
+    picture: '/static/heroes/storm.jpg',
+    description:
+      'Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom have white hair, blue eyes, and the potential to wield magic.',
+  },
+  {
+    alias: 'Magneto',
+    firstname: 'Max',
+    lastname: 'Eisenhardt',
+    picture: '/static/heroes/magneto.jpg',
+    description:
+      'Among the most powerful, recognizable, and infamous mutants to inhabit the planet Earth, Magneto was the X-Men\'s first major nemesis. Now known as a revolutionist and terrorist, Magneto has fought for the X-Men as many times as he’s been against them.',
+  },
+  {
+    alias: 'Mystique',
+    firstname: 'Raven',
+    lastname: 'Darkholme',
+    picture: '/static/heroes/mystique.jpg',
+    description:
+      'True to her name, the shape shifting Mystique is an enigma. Is she a mutant terrorist determined to bring about the end of humanity, or a misguided mutant with a good heart?',
+  },
+  {
+    alias: 'Quicksilver',
+    firstname: 'Pietro Django',
+    lastname: 'Maximoff',
+    picture: '/static/heroes/quicksilver.jpg',
+    description:
+      'Quicksilver is a meta-human with the ability to travel at speeds far beyond the average human. He is the twin brother of the Scarlet Witch. After he and his sister left the Brotherhood of Evil Mutants, they became members of the Avengers. Although Quicksilver\'s loyalties and reliability have long been erratic, his love for his sister has proven constant.',
+  },
+  {
+    alias: 'Star-Lord',
+    firstname: 'Peter',
+    lastname: 'Quill',
+    picture: '/static/heroes/starlord.jpg',
+    description:
+      'Peter Quill is the first and current Star-Lord, a human-alien hybrid and leader of the Guardians of the Galaxy. He is the son of J\'son of Spartax who is King of the Spartoi Empire.',
+  },
+  {
+    alias: 'Gamora',
+    picture: '/static/heroes/gamora.jpg',
+    description:
+      'The last of the Zen-Whoberi race, Gamora was adopted by the villainous Thanos and raised as an assassin. Gamora turned on her adopted father and now uses her abilities to help those who cannot help themselves. A veteran of the Annihilation Wave, Gamora now travels with the Guardians of the Galaxy and is known as the Most Dangerous Woman in the Universe.',
+  },
+  {
+    alias: 'Rocket Raccoon',
+    firstname: 'Rocket',
+    lastname: 'Raccoon',
+    picture: '/static/heroes/rocket.jpg',
+    description:
+      'An expert marksman with a penchant for large weaponry, Rocket Raccoon is the last of his kind. After being captured by the Kree, Rocket teams up with Star-Lord and other adventurers to form the Guardians of the Galaxy. Together, they travel the galaxy and defend it from those who wish it harm.',
+  },
+  {
+    alias: 'Vision',
+    picture: '/static/heroes/vision.jpg',
+    description:
+      'Vision is an artificial intelligence, a "synthezoid" created by the villain Ultron and an Avenger who possesses the power to alter his density at will. Having gained a modicum of humanity, Vision is always afraid he may one day lose touch with it.',
+  },
+  {
+    alias: 'Rogue',
+    firstname: 'Anna',
+    lastname: 'Marie',
+    picture: '/static/heroes/rogue.jpg',
+    description:
+      'Once a member of the Brotherhood of Evil Mutants, Rogue has since become a veteran member of the X-Men. After many years, she has finally gained conscious control of her power to absorb the thoughts, abilities and memories of others through physical contact. She is currently a member of both the Avengers Unity Squad and the X-Men team, based out of Jean Grey\'s School for Higher Learning.',
+  },
+  {
+    alias: 'Kitty Pryde',
+    firstname: 'Katherine Anne',
+    lastname: 'Pryde',
+    picture: '/static/heroes/kittypryde.jpg',
+    description:
+      'Kitty Pryde, also known as Shadowcat, is a mutant gifted with the ability to become intangible and phase her body through solid material. A talented prodigy, she became the "poster child" of the X-Men. Since "Battle of the Atom", Kitty has left Wolverine to join Cyclops and now mentors the time-displaced original X-Men.',
+  },
+  {
+    alias: 'Mister Fantastic',
+    firstname: 'Reed',
+    lastname: 'Richards',
+    picture: '/static/heroes/misterfantastic.jpg',
+    description:
+      'Reed Richards, also known as Mr. Fantastic, is the leader of the Fantastic Four. He can stretch his body to great distances due to his exposure to cosmic rays while in space. He is also considered to be one of the smartest men alive.',
+  },
+  {
+    alias: 'Invisible Woman',
+    firstname: 'Susan',
+    lastname: 'Storm',
+    picture: '/static/heroes/invisiblewoman.jpg',
+    description:
+      'Susan Storm is a founding member of the Fantastic Four and later the Future Foundation. She is able to create invisible force fields of any shape she conceives and able to turn herself and anything she\'s in contact with invisible.',
+  },
+  {
+    alias: 'Human Torch',
+    firstname: 'Jonathan Lowell Spencer',
+    lastname: 'Storm',
+    picture: '/static/heroes/humantorch.jpg',
+    description:
+      'The second most powerful member of the Fantastic Four and the brother of Sue Richards. Due to an accident caused by cosmic radiation in space, he can manipulate fire, turn his entire body into it and fly.',
+  },
+  {
+    alias: 'Thing',
+    firstname: 'Benjamin Jacob',
+    lastname: 'Grimm',
+    picture: '/static/heroes/thing.jpg',
+    description:
+      'Ben Grimm - The Thing - is the original, quintessential tough-guy of the Marvel Universe but because of his transformation he\'s also the tragic member of the Fantastic Four. Ben was an ace test-pilot until exposure to intense cosmic radiation mutated him into a rock-skinned monster with immense superhuman strength. Ben\'s exterior is much harder than stone and he has a gruff disposition, but inside he has a heart of gold.',
+  },
 ]
 
 exports.seed = function(knex, Promise) {

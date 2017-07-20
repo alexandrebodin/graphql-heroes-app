@@ -8,7 +8,7 @@ const findAll = ({ search } = {}) => {
       alias: search + '%',
     })
 
-  return query
+  return query.orderBy('alias')
 }
 
 const findOne = ({ id }) => {
