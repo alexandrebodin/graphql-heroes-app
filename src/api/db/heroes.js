@@ -12,6 +12,7 @@ const findAll = ({ search } = {}) => {
 }
 
 const findOne = ({ id }) => {
+  console.log(id);
   return qb.select().from('heroes').where('id', id)
 }
 

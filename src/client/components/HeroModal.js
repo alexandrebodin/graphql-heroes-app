@@ -1,7 +1,8 @@
-import Link from 'next/link'
-import React, { Component } from 'react'
-import { gql, graphql } from 'react-apollo'
-import glamorous from 'glamorous'
+import Link from 'next/link';
+import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import glamorous from 'glamorous';
 
 const ModalContainer = glamorous.div({
   position: 'fixed',
@@ -14,15 +15,15 @@ const ModalContainer = glamorous.div({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  zIndex: 2,
-})
+  zIndex: 2
+});
 
 const Content = glamorous.div({
   width: 900,
   height: 500,
   overflow: 'hidden',
-  display: 'flex',
-})
+  display: 'flex'
+});
 
 const ImageWrapper = glamorous.div({
   background: '#111',
@@ -31,63 +32,63 @@ const ImageWrapper = glamorous.div({
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  padding: 10,
-})
+  padding: 10
+});
 
 const Image = glamorous.div(
   {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   ({ picture }) => ({
     backgroundImage: `url(${picture})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
-    backgroundPosition: 'center',
+    backgroundPosition: 'center'
   })
-)
+);
 
 const SideBar = glamorous.div({
   background: '#fff',
   flex: '0 0 260px',
   textAlign: 'left',
   padding: 20,
-  fontSize: 12,
-})
+  fontSize: 12
+});
 
 const Title = glamorous.div({
   fontSize: 16,
   fontWeight: 'bold',
   textTransform: 'uppercase',
-  marginBottom: 10,
-})
+  marginBottom: 10
+});
 
 const SubTitle = glamorous.div({
   fontSize: 12,
-  marginBottom: 10,
-})
+  marginBottom: 10
+});
 
 const MovieLi = glamorous.li({
   ':hover': {
-    textDecoration: 'underline',
-  },
-})
+    textDecoration: 'underline'
+  }
+});
 
 class HeroModal extends Component {
   dismiss(e) {
     if (this._shim === e.target || this._photoWrap === e.target) {
       if (this.props.onDismiss) {
-        this.props.onDismiss()
+        this.props.onDismiss();
       }
     }
   }
 
   render() {
-    const { data } = this.props
+    const { data } = this.props;
 
-    if (data.loading || data.error) return null
+    if (data.loading || data.error) return null;
 
-    const hero = data.hero
+    const hero = data.hero;
     return (
       <ModalContainer
         innerRef={el => (this._shim = el)}
@@ -98,25 +99,21 @@ class HeroModal extends Component {
             <Image picture={hero.picture} />
           </ImageWrapper>
           <SideBar>
-            <Title>
-              {hero.alias}
-            </Title>
+            <Title>{hero.alias}</Title>
             <SubTitle>
               Real identity:{' '}
               <strong>
                 {hero.firstname} {hero.lastname}
               </strong>
             </SubTitle>
-            <p style={{ textAlign: 'justify' }}>
-              {hero.description}
-            </p>
+            <p style={{ textAlign: 'justify' }}>{hero.description}</p>
             <strong>Movies:</strong>
             <ul
               style={{
                 margin: 0,
                 padding: 5,
                 listStyle: 'none',
-                lineHeight: 1.5,
+                lineHeight: 1.5
               }}
             >
               {hero.movies.map(m => {
@@ -131,13 +128,13 @@ class HeroModal extends Component {
                       </span>
                     </Link>
                   </MovieLi>
-                )
+                );
               })}
             </ul>
           </SideBar>
         </Content>
       </ModalContainer>
-    )
+    );
   }
 }
 
@@ -158,11 +155,11 @@ const heroQuery = gql`
       }
     }
   }
-`
+`;
 export default graphql(heroQuery, {
   options: ({ id }) => ({
     variables: {
-      id,
-    },
-  }),
-})(HeroModal)
+      id
+    }
+  })
+})(HeroModal);

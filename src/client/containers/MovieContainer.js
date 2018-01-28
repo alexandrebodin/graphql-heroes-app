@@ -1,11 +1,12 @@
-import React from 'react'
-import { gql, graphql } from 'react-apollo'
-import Movie from '../components/Movie'
+import React from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import Movie from '../components/Movie';
 
 const MovieContainer = ({ data }) => {
-  if (data.loading || data.error) return null
-  return <Movie movie={data.movie} />
-}
+  if (data.loading || data.error) return null;
+  return <Movie movie={data.movie} />;
+};
 
 const movieQuery = gql`
   query getMovie($id: ID!) {
@@ -21,7 +22,7 @@ const movieQuery = gql`
       }
     }
   }
-`
+`;
 export default graphql(movieQuery, {
-  options: ({ id }) => ({ id }),
-})(MovieContainer)
+  options: ({ id }) => ({ id })
+})(MovieContainer);

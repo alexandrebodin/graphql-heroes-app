@@ -7,7 +7,7 @@ module.exports = `
   
   type Hero {
     id: ID!
-    alias: String!
+    alias: String
     picture: String
     firstname: String
     lastname: String

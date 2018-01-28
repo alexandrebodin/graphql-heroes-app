@@ -1,15 +1,16 @@
-import React from 'react'
-import { gql, graphql } from 'react-apollo'
-import Hero from '../components/Hero'
+import React from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import Hero from '../components/Hero';
 
 const HeroContainer = ({ data, onHeroClick }) => {
   if (data.loading || data.error)
     return (
       <p style={{ color: 'white', textAlign: 'center' }}> Loading hero... </p>
-    )
+    );
 
-  return <Hero hero={data.hero} />
-}
+  return <Hero hero={data.hero} />;
+};
 
 const heroQuery = gql`
   query getHero($id: ID!) {
@@ -28,7 +29,7 @@ const heroQuery = gql`
       }
     }
   }
-`
+`;
 export default graphql(heroQuery, {
-  options: ({ id }) => ({ id }),
-})(HeroContainer)
+  options: ({ id }) => ({ id })
+})(HeroContainer);

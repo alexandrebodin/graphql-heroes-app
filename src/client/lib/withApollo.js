@@ -1,17 +1,23 @@
-import React, { Component } from 'react'
-import {
-  ApolloClient,
-  createNetworkInterface,
-  ApolloProvider,
-} from 'react-apollo'
+import React, { Component } from 'react';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import fetch from 'isomorphic-unfetch';
 
-const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:3001/api',
-})
+let apolloClient = null;
+
+// Polyfill fetch() on the server (used by apollo-client)
+if (!process.browser) {
+  global.fetch = fetch;
+}
 
 const client = new ApolloClient({
-  networkInterface: networkInterface,
-})
+  link: new HttpLink({
+    uri: 'http://localhost:3001/api'
+  }),
+  cache: new InMemoryCache()
+});
 
 const withApollo = WrappedComponent => {
   return class WithApolloComponent extends Component {
@@ -20,9 +26,9 @@ const withApollo = WrappedComponent => {
         <ApolloProvider client={client}>
           <WrappedComponent {...this.props} />
         </ApolloProvider>
-      )
+      );
     }
-  }
-}
+  };
+};
 
-export default withApollo
+export default withApollo;
